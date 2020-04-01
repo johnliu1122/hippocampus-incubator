@@ -9,4 +9,5 @@ package org.dreamlife.hippocampus.performance.test;
  */
 public interface DemoService {
     String sayHello(String name);
+    String ping();
 }

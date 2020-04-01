@@ -21,4 +21,9 @@ public class DemoServiceImpl implements DemoService {
         logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
         return "Hello " + name + ", response from provider: " + RpcContext.getContext().getLocalAddress();
     }
+
+    @Override
+    public String ping() {
+        return "pong";
+    }
 }

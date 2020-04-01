@@ -38,8 +38,7 @@ Write Back DB（回写模式）要求更新缓存就ok，之后由后台线程�
 4）如何应对缓存穿透给数据库造成的压力？
 这里提供一种解决方案: 读请求加载数据的环境添加锁来解决！
 
-4.1 如果只有一个服务节点可以借助ConcurrentHashMap来提供互斥锁
-ConcurrentHashMap lockContainer = new ConcurrentHashMap();
+4.1 
 lockContainer.put(key,
 (key) -> 
     {
@@ -52,9 +51,6 @@ lockContainer.put(key,
     }
 );
 4.2 如果有多个服务节点则需要一个分布式锁来解决。
-
-
-
 ```java
 // 强一致性缓存模型
 class XXManager {
@@ -95,19 +91,7 @@ class XXManager {
         }
         // bloomFilter 过滤
         
-        // 使用分段锁来加载数据，减少缓存穿透对DB的压力
-        loadOPLock.put(key,
-                (key) ->
-                {
-                    if (cache.exist(key)) {
-                        return Boolean.TRUE;
-                    }
-                    // cache miss;
-                    loadCache();
-                    setCache(key,value);
-                    return Boolean.TRUE;
-                }
-        );
+
         return cache.get(key);
     }
 }
