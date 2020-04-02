@@ -9,10 +9,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>hippocampus-http</module>
-        <module>hippocampus-flowlimit</module>
         <module>hippocampus-cache</module>
         <module>hippocampus-rpc</module>
-        <module>hippocampus-apigateway</module>
         <module>hippocampus-mybatis</module>
         <module>hippocampus-registry</module>
         <module>hippocampus-springboot</module>
