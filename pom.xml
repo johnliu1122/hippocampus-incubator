@@ -10,10 +10,6 @@
     <modules>
         <module>hippocampus-http</module>
         <module>hippocampus-cache</module>
-        <module>hippocampus-rpc</module>
-        <module>hippocampus-mybatis</module>
-        <module>hippocampus-registry</module>
-        <module>hippocampus-springboot</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
