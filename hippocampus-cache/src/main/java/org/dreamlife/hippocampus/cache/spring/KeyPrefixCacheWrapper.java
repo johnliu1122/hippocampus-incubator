@@ -1,4 +1,4 @@
-package org.dreamlife.hippocampus.application.config;
+package org.dreamlife.hippocampus.cache.spring;
 
 import org.springframework.cache.Cache;
 

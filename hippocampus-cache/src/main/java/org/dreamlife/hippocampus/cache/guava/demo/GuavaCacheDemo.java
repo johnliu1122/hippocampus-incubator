@@ -1,4 +1,4 @@
-package org.dreamlife.hippocampus.cache.guava.example;
+package org.dreamlife.hippocampus.cache.guava.demo;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @birthday 11-22
  * @date 2020/3/16
  */
-public class GuavaCacheExample {
+public class GuavaCacheDemo {
     private LoadingCache<String, String> resultCache = CacheBuilder.newBuilder()
             .recordStats()// 打开性能监控
             .maximumSize(200000)

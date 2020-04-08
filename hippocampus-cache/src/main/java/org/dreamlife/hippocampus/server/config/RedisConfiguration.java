@@ -1,4 +1,4 @@
-package org.dreamlife.hippocampus.application.config;
+package org.dreamlife.hippocampus.server.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
