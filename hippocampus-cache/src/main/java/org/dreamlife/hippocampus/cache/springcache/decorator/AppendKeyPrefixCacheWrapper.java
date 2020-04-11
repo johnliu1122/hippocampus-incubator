@@ -1,4 +1,4 @@
-package org.dreamlife.hippocampus.cache.spring;
+package org.dreamlife.hippocampus.cache.springcache.decorator;
 
 import org.springframework.cache.Cache;
 
@@ -6,7 +6,6 @@ import java.util.concurrent.Callable;
 
 /**
  * 定义KEY前缀的缓存装饰器
- *
  * @auther 柳俊阳
  * @github https://github.com/johnliu1122/
  * @csdn https://blog.csdn.net/qq_35695616
@@ -14,13 +13,14 @@ import java.util.concurrent.Callable;
  * @birthday 11-22
  * @date 2020/3/22
  */
-public class KeyPrefixCacheWrapper implements Cache {
+public class AppendKeyPrefixCacheWrapper implements Cache {
     private final Cache proxy;
-    private final String cacheNamePrefix;
+    private final  String cacheNamePrefix;
 
-    public KeyPrefixCacheWrapper(Cache proxy, String cacheNamePrefix){
+    public AppendKeyPrefixCacheWrapper(Cache proxy, String cacheNamePrefix){
         this.proxy=proxy;
         this.cacheNamePrefix = cacheNamePrefix;
+
     }
 
     @Override

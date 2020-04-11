@@ -1,6 +1,6 @@
-package org.dreamlife.hippocampus.server.config;
+package org.dreamlife.hippocampus.cache.server.config;
 
-import org.dreamlife.hippocampus.cache.spring.KeyPrefixCacheWrapper;
+import org.dreamlife.hippocampus.cache.springcache.decorator.AppendKeyPrefixCacheWrapper;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -35,7 +35,7 @@ public class CacheConfiguration {
 
     // 添加统一KEY前缀的缓存装饰
     private Cache keyPrefixWrapperCache(Cache cache,String keyPrefix){
-        return new KeyPrefixCacheWrapper(cache,keyPrefix);
+        return new AppendKeyPrefixCacheWrapper(cache,keyPrefix);
     }
 
 }

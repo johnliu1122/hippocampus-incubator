@@ -1,4 +1,4 @@
-package org.dreamlife.hippocampus.server.manager;
+package org.dreamlife.hippocampus.cache.server.manager;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.Cache;

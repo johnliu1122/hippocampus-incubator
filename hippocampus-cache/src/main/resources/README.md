@@ -132,19 +132,16 @@ class XXManager {
         }
         // bloomFilter 过滤
         
-        // 使用分段锁来加载数据，减少缓存穿透对DB的压力
-        loadOPLock.put(key,
-                (key) ->
-                {
-                    if (cache.exist(key)) {
-                        return Boolean.TRUE;
-                    }
-                    // cache miss;
-                    loadCache();
-                    setCache(key,value,timeout);
-                    return Boolean.TRUE;
-                }
-        );
+        // 使用分布式锁来加载数据，减少缓存穿透对DB的压力
+        // 加锁
+        setMutex(key);
+        if(cache.contains(key)){
+            return cache.get(key);
+        }
+        // load from DB;
+        
+        // 解锁
+        releaseMutex(key);
         return cache.get(key);
     }
 }

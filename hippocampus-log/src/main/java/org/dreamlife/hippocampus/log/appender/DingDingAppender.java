@@ -40,7 +40,7 @@ import java.net.URISyntaxException;
  * @date 2020/4/11
  */
 @Data
-public class DingDingAppender<E> extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class DingDingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     private Layout<ILoggingEvent> layout;
     private String webHook;
     private String mobiles;
