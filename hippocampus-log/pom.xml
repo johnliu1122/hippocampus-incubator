@@ -11,5 +11,10 @@
 
     <artifactId>hippocampus-logback</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.dreamlife.hippocampus</groupId>
+            <artifactId>hippocampus-http</artifactId>
+        </dependency>
+    </dependencies>
 </project>
