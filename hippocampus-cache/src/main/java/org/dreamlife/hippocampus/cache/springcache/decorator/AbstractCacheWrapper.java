@@ -5,6 +5,7 @@ import org.springframework.cache.Cache;
 import java.util.concurrent.Callable;
 
 /**
+ * 抽象装饰者
  * @auther 柳俊阳
  * @github https://github.com/johnliu1122/
  * @csdn https://blog.csdn.net/qq_35695616

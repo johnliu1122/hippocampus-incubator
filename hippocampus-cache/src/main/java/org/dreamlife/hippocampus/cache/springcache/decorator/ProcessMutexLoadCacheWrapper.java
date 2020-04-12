@@ -10,7 +10,7 @@ import java.util.concurrent.FutureTask;
 
 /**
  *
- * 对load操作进行同步
+ * 在进程级别内对load操作进行同步
  * 可以避免缓存穿透时大量请求操作数据库
  * 下面封装的方法可以确保当缓存失效后一个进程只会有一个请求穿透到数据库里进行查询
  *
@@ -20,11 +20,11 @@ import java.util.concurrent.FutureTask;
  * @email johnliu1122@163.com
  * @date 2020/4/9
  */
-public class SyncLoadCacheWrapper extends AbstractCacheWrapper {
+public class ProcessMutexLoadCacheWrapper extends AbstractCacheWrapper {
 
     private final Map<Object, FutureTask> opLock  = Maps.newConcurrentMap();
 
-    public SyncLoadCacheWrapper(Cache proxy) {
+    public ProcessMutexLoadCacheWrapper(Cache proxy) {
         super(proxy);
     }
 
