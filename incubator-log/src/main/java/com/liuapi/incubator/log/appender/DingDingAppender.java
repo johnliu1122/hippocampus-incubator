@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
  * <configuration>
  *      <property name="FILE_LOG_PATTERN"
  *               value="%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
- *      <appender name="DINGDING" class="org.dreamlife.hippocampus.log.appender.DingDingAppender">
+ *      <appender name="DINGDING" class="com.liuapi.incubator.log.appender.DingDingAppender">
  *         <layout class="ch.qos.logback.classic.PatternLayout" >
  *             <pattern>${FILE_LOG_PATTERN}</pattern>
  *         </layout>
