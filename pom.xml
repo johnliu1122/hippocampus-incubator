@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.dreamlife.hippocampus</groupId>
-    <artifactId>hippocampus-incubator</artifactId>
+    <groupId>com.liuapi.hippocampus</groupId>
+    <artifactId>incubator-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>hippocampus-http</module>
-        <module>hippocampus-cache</module>
-        <module>hippocampus-log</module>
+        <module>incubator-http</module>
+        <module>incubator-cache</module>
+        <module>incubator-log</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
@@ -67,8 +67,8 @@
                 <version>${dubbo.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.dreamlife.hippocampus</groupId>
-                <artifactId>hippocampus-http</artifactId>
+                <groupId>com.liuapi.hippocampus</groupId>
+                <artifactId>incubator-http</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

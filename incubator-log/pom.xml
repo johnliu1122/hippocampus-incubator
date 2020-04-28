@@ -3,21 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hippocampus-incubator</artifactId>
-        <groupId>org.dreamlife.hippocampus</groupId>
+        <groupId>com.liuapi.hippocampus</groupId>
+        <artifactId>incubator-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <artifactId>hippocampus-http</artifactId>
+
+    <artifactId>hippocampus-log</artifactId>
+
     <dependencies>
         <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
+            <groupId>com.liuapi.hippocampus</groupId>
+            <artifactId>incubator-http</artifactId>
         </dependency>
     </dependencies>
 </project>
