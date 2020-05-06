@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DruidConfiguration {
-    @Primary
+
     @Bean
     @ConfigurationProperties("spring.datasource.shard1.druid")
     public DataSource shard1() {
