@@ -17,7 +17,7 @@ public class RoutingDataSourceConfiguration {
     /**
      * 配置 路由数据源
      *
-     * 路由数据源可以根据线程内的局部变量来选择选择相应的数据源
+     * 路由数据源可以根据线程内的局部变量来选择相应的数据源
      * @param shard1
      * @param shard2
      * @return
