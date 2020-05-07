@@ -11,9 +11,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Import(StrategyBeanScanRegistrar.class)
 public @interface StrategyBeanScan {
-    String[] scanBasePackages();
+    String[] basePackages() default {};
 
-    Class[] basePackageClasses();
+    Class[] basePackageClasses() default {};
 
     String[] value() default {};
 }

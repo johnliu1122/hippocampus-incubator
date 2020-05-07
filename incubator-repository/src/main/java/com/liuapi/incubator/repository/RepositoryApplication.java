@@ -1,12 +1,13 @@
 package com.liuapi.incubator.repository;
 
+import com.liuapi.incubator.repository.annocation.StrategyBeanScan;
 import com.liuapi.incubator.repository.mapper.UserMapper;
 import com.liuapi.incubator.repository.model.User;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-
+@StrategyBeanScan(basePackages = {"com.liuapi.incubator.repository"})
 @MapperScan(basePackages = "com.liuapi.incubator.repository.mapper")
 @SpringBootApplication
 public class RepositoryApplication {
