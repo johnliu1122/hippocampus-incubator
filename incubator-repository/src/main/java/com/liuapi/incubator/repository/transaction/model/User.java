@@ -1,4 +1,4 @@
-package com.liuapi.incubator.repository.model;
+package com.liuapi.incubator.repository.transaction.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

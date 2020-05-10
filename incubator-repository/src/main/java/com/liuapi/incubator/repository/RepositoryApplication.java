@@ -1,25 +1,17 @@
 package com.liuapi.incubator.repository;
 
 import com.liuapi.incubator.repository.annocation.StrategyBeanScan;
-import com.liuapi.incubator.repository.mapper.UserMapper;
-import com.liuapi.incubator.repository.model.User;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @StrategyBeanScan(basePackages = {"com.liuapi.incubator.repository"})
-@MapperScan(basePackages = "com.liuapi.incubator.repository.mapper")
-@SpringBootApplication
+@MapperScan(basePackages = "com.liuapi.incubator.repository.transaction.mapper")
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@Slf4j
 public class RepositoryApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(RepositoryApplication.class);
-        UserMapper userMapper = context.getBean(UserMapper.class);
-        userMapper.deleteUserById(1L);
-        userMapper.addUser(new User()
-                .setId(1L)
-                .setUsername("张三")
-                .setAddress("浙江省湖州市德清县武康镇"));
-        User user = userMapper.load(1L);
-        System.out.println(user);
+        SpringApplication.run(RepositoryApplication.class);
     }
 }

@@ -28,7 +28,7 @@ public class RoutingDataSourceConfiguration {
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put("shard1", shard1);
         targetDataSources.put("shard2", shard2);
-        return new RoutingDataSource(shard2, targetDataSources);
+        return new RoutingDataSource(shard1, targetDataSources);
     }
 
 }

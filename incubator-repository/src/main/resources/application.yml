@@ -47,3 +47,5 @@ logging:
   level:
     root: info
     com.liuapi.incubator.repository: debug
+server:
+  port: 80

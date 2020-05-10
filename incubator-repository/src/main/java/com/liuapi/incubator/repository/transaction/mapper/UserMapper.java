@@ -1,6 +1,6 @@
-package com.liuapi.incubator.repository.mapper;
+package com.liuapi.incubator.repository.transaction.mapper;
 
-import com.liuapi.incubator.repository.model.User;
+import com.liuapi.incubator.repository.transaction.model.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
