@@ -5,9 +5,9 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class UserOpLog {
+public class Log {
     private Long id;
     private Long uid;
-    private String op;
+    private String value;
     private long createdAt;
 }

@@ -10,7 +10,7 @@
         select * from user where id = #{id};
     </select>
     <insert id="addUser" parameterType="com.liuapi.incubator.repository.transaction.model.User" keyProperty="id" useGeneratedKeys="true">
-        insert into user (id,username,address) values (#{id},#{username},#{address});
+        insert into user (id,username,address,created_at) values (#{id},#{username},#{address},now());
     </insert>
     <update id="updateUserById" parameterType="com.liuapi.incubator.repository.transaction.model.User">
         update user set username=#{username},address=#{address} where id=#{id}
