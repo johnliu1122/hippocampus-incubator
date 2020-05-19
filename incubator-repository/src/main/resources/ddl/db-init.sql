@@ -16,6 +16,14 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `privilege` (
+  `id` bigint(20) unsigned NOT NULL,
+  `code` varchar(20) DEFAULT NULL,
+  `gmt_create` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- 创建分片2的ddl
 create database usercenter_shard2 charset utf8mb4;
 use usercenter_shard2;
@@ -33,3 +41,11 @@ CREATE TABLE `user` (
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `privilege` (
+  `id` bigint(20) unsigned NOT NULL,
+  `code` varchar(20) DEFAULT NULL,
+  `gmt_create` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
