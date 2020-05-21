@@ -12,7 +12,6 @@
         <module>incubator-cache</module>
         <module>incubator-log</module>
         <module>incubator-repository</module>
-        <module>incubator-tcc</module>
         <module>incubator-async</module>
     </modules>
     <packaging>pom</packaging>
