@@ -55,6 +55,7 @@ public class ProcessMutexLoadCacheWrapper extends AbstractCacheWrapper {
             }
             try {
                 value = futureTask.get();
+                // 保存到缓存中
                 this.putIfAbsent(key, value);
                 return value;
             } catch (InterruptedException e) {

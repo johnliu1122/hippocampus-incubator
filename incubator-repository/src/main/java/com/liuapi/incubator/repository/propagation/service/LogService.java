@@ -1,7 +1,7 @@
-package com.liuapi.incubator.repository.transaction.service;
+package com.liuapi.incubator.repository.propagation.service;
 
-import com.liuapi.incubator.repository.transaction.mapper.LogMapper;
-import com.liuapi.incubator.repository.transaction.model.Log;
+import com.liuapi.incubator.repository.propagation.mapper.LogMapper;
+import com.liuapi.incubator.repository.propagation.model.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

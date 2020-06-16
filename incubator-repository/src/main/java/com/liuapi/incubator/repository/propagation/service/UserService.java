@@ -1,7 +1,7 @@
-package com.liuapi.incubator.repository.transaction.service;
+package com.liuapi.incubator.repository.propagation.service;
 
-import com.liuapi.incubator.repository.transaction.mapper.UserMapper;
-import com.liuapi.incubator.repository.transaction.model.User;
+import com.liuapi.incubator.repository.propagation.mapper.UserMapper;
+import com.liuapi.incubator.repository.propagation.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

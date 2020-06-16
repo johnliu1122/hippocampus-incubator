@@ -1,13 +1,13 @@
-package com.liuapi.incubator.repository.transaction.model;
+package com.liuapi.incubator.repository.propagation.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class Log {
+public class User {
     private Long id;
-    private Long uid;
-    private String value;
+    private String username;
+    private String address;
     private long createdAt;
 }

@@ -1,14 +1,14 @@
-package com.liuapi.incubator.repository.transaction.controller;
+package com.liuapi.incubator.repository.propagation.controller;
 
-import com.liuapi.incubator.repository.transaction.service.UserService;
+import com.liuapi.incubator.repository.propagation.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user/tx/")
-public class UserController {
+@RequestMapping("/user/tx/propagation")
+public class TransactionPropagationController {
     @Autowired
     private UserService userService;
 

@@ -17,7 +17,7 @@ CREATE TABLE `user` (
   `balance` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_id_card` (`id_card`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `privilege` (
   `id` bigint(20) unsigned NOT NULL,

@@ -2,17 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.liuapi.incubator.repository.transaction.mapper.UserMapper">
-    <select id="getAllUser" resultType="com.liuapi.incubator.repository.transaction.model.User">
+<mapper namespace="com.liuapi.incubator.repository.propagation.mapper.UserMapper">
+    <select id="getAllUser" resultType="com.liuapi.incubator.repository.propagation.model.User">
         select * from user;
     </select>
-    <select id="load" resultType="com.liuapi.incubator.repository.transaction.model.User" >
+    <select id="load" resultType="com.liuapi.incubator.repository.propagation.model.User" >
         select * from user where id = #{id};
     </select>
-    <insert id="addUser" parameterType="com.liuapi.incubator.repository.transaction.model.User" keyProperty="id" useGeneratedKeys="true">
+    <insert id="addUser" parameterType="com.liuapi.incubator.repository.propagation.model.User" keyProperty="id" useGeneratedKeys="true">
         insert into user (id,username,address,created_at) values (#{id},#{username},#{address},now());
     </insert>
-    <update id="updateUserById" parameterType="com.liuapi.incubator.repository.transaction.model.User">
+    <update id="updateUserById" parameterType="com.liuapi.incubator.repository.propagation.model.User">
         update user set username=#{username},address=#{address} where id=#{id}
     </update>
     <delete id="deleteUserById">

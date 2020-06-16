@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @StrategyBeanScan(basePackages = {"com.liuapi.incubator.repository"})
-@MapperScan(basePackages = {"com.liuapi.incubator.repository.transaction.mapper",
+@MapperScan(basePackages = {"com.liuapi.incubator.repository.propagation.mapper",
         "com.liuapi.incubator.repository.scene"})
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @Slf4j
