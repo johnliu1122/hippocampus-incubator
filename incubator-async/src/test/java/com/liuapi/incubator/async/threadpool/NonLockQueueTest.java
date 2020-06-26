@@ -1,6 +1,8 @@
 package com.liuapi.incubator.async.threadpool;
 
 import com.google.common.collect.Queues;
+
+import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -15,11 +17,13 @@ class NonLockQueueTest {
         );
         Runnable produce = () -> {
             double random = Math.random();
-            queue.enqueue("----"+random+"----");
+            queue.offer(""+random);
+            System.out.println("offer "+random);
         };
 
         Runnable consumer = () -> {
-            queue.dequeue();
+            String value = queue.poll();
+            System.out.println("poll "+value);
         };
         for(int i =0;i<20;i++){
             executorService.submit(produce);
@@ -30,5 +34,4 @@ class NonLockQueueTest {
             executorService.submit(consumer);
         }
         executorService.shutdown();
-    }
-}
+    }}
