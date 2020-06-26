@@ -17,7 +17,6 @@ public class NonLockQueue<T> {
     private volatile Node tail;
     private static final Unsafe UNSAFE;
     private static final long headOffset;
-    private static final long tailOffset;
 
     private AtomicInteger size = new AtomicInteger(0);
     static {
@@ -27,7 +26,6 @@ public class NonLockQueue<T> {
             UNSAFE = (Unsafe) f.get(null);
             Class k = NonLockQueue.class;
             headOffset = UNSAFE.objectFieldOffset(k.getDeclaredField("head"));
-            tailOffset = UNSAFE.objectFieldOffset(k.getDeclaredField("tail"));
         }catch (Exception e){
             throw new Error(e);
         }
@@ -36,17 +34,12 @@ public class NonLockQueue<T> {
         return UNSAFE.compareAndSwapObject(this,headOffset,cmp,val);
     }
 
-    public boolean casTail(Node cmp,Node val){
-        return UNSAFE.compareAndSwapObject(this,tailOffset,cmp,val);
-    }
-
     public NonLockQueue(){
         Node empty = new Node(null);
         head = tail = empty;
     }
     static class Node<T>{
         private static final Unsafe UNSAFE;
-        private static final long itemOffset;
         private static final long nextOffset;
         static {
             try {
@@ -54,8 +47,6 @@ public class NonLockQueue<T> {
                 f.setAccessible(true);
                 UNSAFE = (Unsafe) f.get(null);
                 Class<?> k = Node.class;
-                itemOffset = UNSAFE.objectFieldOffset
-                        (k.getDeclaredField("item"));
                 nextOffset = UNSAFE.objectFieldOffset
                         (k.getDeclaredField("next"));
             } catch (Exception e) {
@@ -76,7 +67,7 @@ public class NonLockQueue<T> {
         Node<T> n = new Node(e);
         for(;;){
             Node<T>  t = tail;
-            if(!t.casNext(null,n)){ // fail to link in then continue
+            if(!t.casNext(null,n)){ // fail to link in
                 continue;
             }
             tail = n;
@@ -88,8 +79,8 @@ public class NonLockQueue<T> {
     }
 
     public T dequeue(){
-        // assert there have at least two elements
         for(;;){
+            // assert there have at least two elements
             if(size.get()<1){
                 return null;
             }

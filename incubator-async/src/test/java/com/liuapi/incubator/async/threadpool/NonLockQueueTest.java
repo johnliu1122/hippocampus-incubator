@@ -1,21 +1,13 @@
 package com.liuapi.incubator.async.threadpool;
 
 import com.google.common.collect.Queues;
-
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @auther 柳俊阳
- * @github https://github.com/johnliu1122/
- * @csdn https://blog.csdn.net/qq_35695616
- * @email johnliu1122@163.com
- * @date 2020/6/26
- */
-public class QueueDemo {
-    public static void main(String[] args) throws InterruptedException {
+class NonLockQueueTest {
+    @org.junit.jupiter.api.Test
+    void main() {
         NonLockQueue<String > queue = new NonLockQueue<>();
 
         ExecutorService executorService = new ThreadPoolExecutor(
