@@ -22,10 +22,12 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class CacheConfiguration {
     @Bean
     public CacheManager cacheManager(@SuppressWarnings("rawtypes") RedisTemplate redisTemplate) {
-        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
-        //设置缓存过期时间默认为5分钟
-        cacheManager.setDefaultExpiration(300);
-        return cacheManager;
+//        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
+
+//        //设置缓存过期时间默认为5分钟
+//        cacheManager.setDefaultExpiration(300);
+//        return cacheManager;
+        return null;
     }
 
     @Bean("goodsCache")

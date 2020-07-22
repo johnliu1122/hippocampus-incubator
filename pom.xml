@@ -6,11 +6,9 @@
 
     <groupId>com.liuapi.hippocampus</groupId>
     <artifactId>incubator-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1</version>
     <modules>
-        <module>incubator-http</module>
         <module>incubator-cache</module>
-        <module>incubator-log</module>
         <module>incubator-repository</module>
         <module>incubator-async</module>
     </modules>
