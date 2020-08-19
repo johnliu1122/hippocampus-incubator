@@ -36,6 +36,13 @@ public class GuavaCacheDemo {
         try {
             return resultCache.get(key);
         } catch (Exception e) {
+            /**
+             *         V value = valueReference.waitForValue();
+             *         if (value == null) {
+             *           throw new InvalidCacheLoadException("CacheLoader returned null for key " + key + ".");
+             *         }
+             *         如果返回值为null，则报错InvalidCacheLoadException
+             */
             throw new RuntimeException(e.getMessage());
         }
     }
